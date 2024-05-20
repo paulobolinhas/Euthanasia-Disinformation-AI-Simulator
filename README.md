@@ -1,6 +1,6 @@
-# Euthanasia-AI
+# AI and Euthanasia
 
-## Script 1: AI Euthanasia Misinformation Simulation
+## Script 1: AI disinformation impact on Euthanasia public opinion
 
 #### Uses pre-trained GPT-2 models from the Hugging Face transformers library to generate responses to given prompts/questions.
 
