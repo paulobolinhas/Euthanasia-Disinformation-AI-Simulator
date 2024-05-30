@@ -12,4 +12,3 @@
 ## AI-AssistedEuthanasiaSimulator: Simulates AI-Assisted Euthanasia
 
 #### TODO
-
