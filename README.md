@@ -1,4 +1,4 @@
-# Euthanasia Dissemination AI Simulator
+# Euthanasia Disinformation dissemination AI Simulator
 
 'Simulates AI disinformation impact on Euthanasia public opinion'
 
