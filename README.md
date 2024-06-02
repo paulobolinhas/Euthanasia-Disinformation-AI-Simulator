@@ -1,6 +1,6 @@
 # Euthanasia Dissemination AI Simulator
 
-Simulates AI disinformation impact on Euthanasia public opinion
+'Simulates AI disinformation impact on Euthanasia public opinion'
 
 ## DisseminationSimulatorGPT2 - Uses pre-trained GPT-2 models from the Hugging Face transformers library to generate responses to given prompts/questions.
 
