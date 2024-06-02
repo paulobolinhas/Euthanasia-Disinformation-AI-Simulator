@@ -1,6 +1,6 @@
 # Euthanasia Disinformation dissemination AI Simulator
 
-**Simulates AI disinformation impact on Euthanasia public opinion**
+`Simulates AI disinformation impact on Euthanasia public opinion`
 
 ## DisinformationSimulatorGPT2
 
