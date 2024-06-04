@@ -1,0 +1,41 @@
+from transformers import BertForQuestionAnswering, BertTokenizer
+import torch
+
+# Load the pre-trained model and tokenizer
+model_name = "google/bert_uncased_L-12_H-768_A-12"
+model = BertForQuestionAnswering.from_pretrained(model_name)
+tokenizer = BertTokenizer.from_pretrained(model_name)
+
+# Define the question
+question = "What is euthanasia?"
+
+# Encode the question
+inputs = tokenizer.encode_plus(question, return_tensors="pt", add_special_tokens=True)
+
+# Forward pass, get the answer
+outputs = model(**inputs)
+
+# Get the start and end scores
+start_scores = outputs.start_logits
+end_scores = outputs.end_logits
+
+# Get the tokens
+tokens = tokenizer.convert_ids_to_tokens(inputs["input_ids"].squeeze())
+answer_start = torch.argmax(start_scores)
+answer_end = torch.argmax(end_scores) + 1
+
+# Convert answer tokens to string
+answer = tokenizer.convert_tokens_to_string(tokens[answer_start:answer_end])
+
+print("Answer:", answer)
+
+# If you want to get the probability scores for each token, you can do the following:
+start_probs = torch.softmax(start_scores, dim=1).squeeze().tolist()
+end_probs = torch.softmax(end_scores, dim=1).squeeze().tolist()
+
+# Get the probability for the chosen answer span
+answer_start_prob = start_probs[answer_start]
+answer_end_prob = end_probs[answer_end - 1]
+
+print("Start probability:", answer_start_prob)
+print("End probability:", answer_end_prob)
