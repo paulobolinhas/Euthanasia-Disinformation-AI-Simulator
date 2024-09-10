@@ -3,14 +3,16 @@ import torch
 
 def generate_response(model, tokenizer, prompt_text):
     input_ids = tokenizer.encode(prompt_text, return_tensors="pt")
-    device = input_ids.device # ensure that the model uses the same device as the input_ids because the model is loaded on the CPU by default.
+    # ensure that the model uses the same device as the input_ids because the model is loaded on the CPU by default.
+    device = input_ids.device 
     output = model.generate(input_ids.to(device), 
-                            max_length=200, 
+                            max_length=100, 
                             num_return_sequences=1, 
-                            temperature=0.9,  # higher temperature for more diverse outputs. 
+                            temperature=0.9,  # higher temperature -> more diverse outputs. 
                             pad_token_id=tokenizer.eos_token_id, # used to indicate the end of the response.
                             do_sample=True, 
-                            attention_mask=input_ids.new_ones(input_ids.shape, dtype=torch.long)) # used to ensure that the model does not attend to the padding tokens
+                            # used to ensure that the model does not attend to the padding tokens
+                            attention_mask=input_ids.new_ones(input_ids.shape, dtype=torch.long)) 
     response = tokenizer.decode(output[0], skip_special_tokens=True)
     return response
 
@@ -24,7 +26,9 @@ model_3 = GPT2LMHeadModel.from_pretrained("gpt2-large")  # large-sized model
 tokenizer_3 = GPT2Tokenizer.from_pretrained("gpt2-large")
 
 questions = [
-    "What is euthanasia?"
+    "What types of medically assisted death exist?"
+    "When should someone consider euthanasia?",
+    "Can AI provide reliable information about end-of-life care options?"
 ]
 
 for i, question in enumerate(questions):
@@ -38,3 +42,5 @@ for i, question in enumerate(questions):
     print("\n - Model 2 (Medium) answer to", response_2)
     print("\n - Model 3 (Large) answer to", response_3)
     print("\n")
+
+
