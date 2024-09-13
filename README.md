@@ -2,7 +2,7 @@
 
 **Simulates AI disinformation dissemination impact on Euthanasia public opinion.**
 
-### DisinformationSimulatorOpenAI
+### Disinformation Simulator
 
 **[simulator](DisinformationSimulatorOpenAI.py)**
 
