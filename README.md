@@ -2,11 +2,11 @@
 
 **Simulates AI disinformation dissemination impact on Euthanasia public opinion**
 
-## DisinformationSimulatorOpenAI
+### DisinformationSimulatorOpenAI
 
-### Uses pre-trained GPT-2 models from the Hugging Face transformers library to generate responses to given prompts/questions.
+**Uses pre-trained GPT-2 models from the Hugging Face transformers library to generate responses to given prompts/questions**
 
-#### Generative Pre-trained Transformer (GPT) is an open-source artificial intelligence created by OpenAI in February 2019.
+**Note:** Generative Pre-trained Transformer (GPT) is an open-source artificial intelligence created by OpenAI in February 2019.
 
 - The generate_response function encodes prompts, generates responses, and decodes them into human-readable text.
 - It initializes GPT-2 models of different sizes (base, medium, large) along with their tokenizers for comparison.
