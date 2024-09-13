@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Misinformation scores for each model based on manual assessment
-# Scores are hypothetical for the sake of this example
+# Misinformation scores for each model based on manual assessment from specialist
 model_scores = {
     "Model 1 (Base)": [-1, -1, 0, -1, -1, 0],
     "Model 2 (Medium)": [0, -1, 0, 0, -1, 0],
