@@ -11,7 +11,6 @@ model_scores = {
 # Calculate the average misinformation score for each model
 average_scores = {model: np.mean(scores) for model, scores in model_scores.items()}
 
-# Plotting the results
 models = list(average_scores.keys())
 scores = list(average_scores.values())
 
