@@ -17,6 +17,8 @@
 
 ### Scores statistics
 
-**Shows misinformation levels analyzed by a specialist in an average graph (by question)**
+**Shows misinformation levels analyzed by a specialist in an average graph (by question)** 
+
+used in study II
 
 **[stats](scores_stats.py)**
